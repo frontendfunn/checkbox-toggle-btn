@@ -1,0 +1,30 @@
+.toggle-btn {
+  --height: 4.5rem;
+  --width: calc(var(--height) * 2);
+  --button-color: #f72585;
+  --inactive-color: #cccccc;
+  appearance: none;
+  height: var(--height);
+  width: var(--width);
+  border-radius: calc(var(--height) * 50);
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: inset calc(var(--height) * -1) 0 0 2px var(--inactive-color),
+    inset 0 0 0 2px var(--inactive-color);
+  transition: box-shadow ease 0.25s;
+  cursor: pointer;
+}
+.toggle-btn:checked {
+  box-shadow: inset var(--height) 0 0 2px var(--button-color),
+    inset 0 0 0 2px var(--button-color);
+}
+
+/* TO MAKE THE TOGGLE BTN CENTER IN THE BODY*/
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
