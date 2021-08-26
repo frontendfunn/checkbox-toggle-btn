@@ -1,6 +1,6 @@
 # Single Element Checkbox Toggle Button
 
-## [🚀 Live Preview]()
+## [🚀 Live Preview](https://frontendfunn.github.io/checkbox-toggle-btn/)
 
 ![](./repoImages/preview.gif)
 
