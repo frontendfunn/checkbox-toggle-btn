@@ -1,23 +1,30 @@
+/* custom font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+/**** CHECKBOX CODE ****/
 .toggle-btn {
   --height: 4.5rem;
   --width: calc(var(--height) * 2);
-  --button-color: #f72585;
-  --inactive-color: #cccccc;
+  --color: var(--inactive-color, #cccccc);
+  --spreadRadius: calc(var(--height) * 0.05);
+  --direction: -1;
   appearance: none;
   height: var(--height);
   width: var(--width);
-  border-radius: calc(var(--height) * 50);
-  border: 1px solid #ffffff;
+  border-radius: calc(var(--height) * 9999);
   box-sizing: border-box;
-  box-shadow: inset calc(var(--height) * -1) 0 0 2px var(--inactive-color),
-    inset 0 0 0 2px var(--inactive-color);
+  /* inset | offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: inset calc(var(--height) * var(--direction)) 0 0
+      var(--spreadRadius) var(--color),
+    inset 0 0 0 var(--spreadRadius) var(--color);
   transition: box-shadow ease 0.25s;
   cursor: pointer;
 }
 .toggle-btn:checked {
-  box-shadow: inset var(--height) 0 0 2px var(--button-color),
-    inset 0 0 0 2px var(--button-color);
+  --color: var(--active-color, #f72585);
+  --direction: 1;
 }
+/**** CHECKBOX CODE END****/
 
 /* TO MAKE THE TOGGLE BTN CENTER IN THE BODY*/
 html,
@@ -27,4 +34,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  font-family: "Rubik", sans-serif;
 }
